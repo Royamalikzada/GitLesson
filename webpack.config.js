@@ -1,7 +1,10 @@
 const path = require('path');
 module.exports = {
   devtool: 'eval-source-map',
-  entry: './src/index.js',
+  entry: {
+    comment: './src/indexComment.js',
+    post: './src/indexPost.js'
+  },
   mode: 'development',
   module: {
     rules: [
@@ -15,7 +18,7 @@ module.exports = {
     ]
   },
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
+    path: __dirname + '/dist',
+    filename: '[name].js',
   },
 };
